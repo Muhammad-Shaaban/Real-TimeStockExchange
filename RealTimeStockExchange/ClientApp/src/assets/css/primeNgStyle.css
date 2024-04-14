@@ -1,0 +1,93 @@
+/* Student Page - Main */
+.Student_MainPage .p-card,
+.Student_RegisteredCourses .p-card,
+.Student_FinisheedCourses .p-card,
+.Teacher_MainPage .p-card,
+.Teacher_RegisteredCourses .p-card,
+.Teacher_FinishedCourses .p-card
+{margin: 0 auto;}
+
+.Student_MainPage .p-card-body .p-card-content,
+.Student_RegisteredCourses .p-card-body .p-card-content,
+.Student_FinisheedCourses .p-card-body .p-card-content,
+.Teacher_MainPage .p-card-body .p-card-content,
+.Teacher_RegisteredCourses .p-card-body .p-card-content,
+.Teacher_FinishedCourses .p-card-body .p-card-content{padding: 0;}
+
+.Student_MainPage .p-card-footer button,
+.Student_RegisteredCourses .p-card-footer button,
+.Student_FinisheedCourses .p-card-footer button,
+.Teacher_MainPage .p-card-footer button,
+.Teacher_RegisteredCourses .p-card-footer button,
+.Teacher_FinishedCourses .p-card-footer button{display: block; margin: 0 auto;width: 100%;}
+
+.Student_MainPage .ImgSection .p-button.p-button-icon-only,
+.Student_RegisteredCourses .ImgSection .p-button.p-button-icon-only,
+.Student_FinisheedCourses .ImgSection .p-button.p-button-icon-only,
+.Teacher_MainPage .ImgSection .p-button.p-button-icon-only,
+.Teacher_RegisteredCourses .ImgSection .p-button.p-button-icon-only,
+.Teacher_FinishedCourses .ImgSection .p-button.p-button-icon-only{
+    position: absolute;
+    top: 9%;
+    right: 0%;
+    width: 80px;
+    padding: 5px;
+    background-color: transparent;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    box-shadow: none;
+}
+
+.Student_MainPage .ImgSection .p-button.p-button-icon-only span,
+.Student_RegisteredCourses .ImgSection .p-button.p-button-icon-only span,
+.Student_FinisheedCourses .ImgSection .p-button.p-button-icon-only span,
+.Teacher_MainPage .ImgSection .p-button.p-button-icon-only span,
+.Teacher_RegisteredCourses .ImgSection .p-button.p-button-icon-only span,
+.Teacher_FinishedCourses .ImgSection .p-button.p-button-icon-only span{font-size: 1.5em;}
+
+.Student_MainPage .CardBody img,
+.Student_RegisteredCourses .CardBody img,
+.Student_FinisheedCourses .CardBody img,
+.Teacher_MainPage .CardBody img,
+.Teacher_RegisteredCourses .CardBody img,
+.Teacher_FinishedCourses .CardBody img{border-radius: 50%;}
+
+/* Student Page - Course Details */
+.Student_CourseDetails .p-card{width: 50%;}
+.Student_CourseDetails .p-card-footer button{display: block; margin: 0 auto;width: 50%;}
+
+
+
+/* Student Page - Finished Courses */
+.Student_FinisheedCourses .p-progressbar{height: .8rem;}
+.Student_FinisheedCourses .p-progressbar .p-progressbar-value{background-color: #00B998;}
+
+.Student_FinisheedCourses .pi-check{
+    background-color: #00B998;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    line-height: 1.9;
+}
+
+
+/* Student Page - Edit Profile */
+.Student_EditProfile form .p-multiselect{width: 100%;}
+
+/* Student Page - Support */
+.Student_Support .p-accordion .p-accordion-tab,
+.Teacher_Support .p-accordion .p-accordion-tab{margin-bottom: 2em;}
+
+.Student_Support .p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon,
+.Teacher_Support .p-accordion .p-accordion-header .p-accordion-header-link .p-accordion-toggle-icon{color: #335EF7;}
+
+.p-dialog{width: 30%;}
+
+@media (max-width: 992px) {
+    .Student_CourseDetails .p-card,
+    .Student_CourseDetails .p-card-footer button{width: 100%;}
+    .p-dialog{width: 90%;}
+}

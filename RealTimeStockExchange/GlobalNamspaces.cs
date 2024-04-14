@@ -1,0 +1,15 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Identity;
+global using RealTimeStockExchange.DAL.Context;
+global using RealTimeStockExchange.Helpers.Configurations;
+global using NSwag;
+global using NSwag.CodeGeneration.TypeScript;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using Microsoft.IdentityModel.Tokens;
+global using RealTimeStockExchange;
+global using RealTimeStockExchange.Helpers.SignalR;
+global using RealTimeStockExchange.StaticCongifurations;
+global using RealTimeStockExchange.DAL.Entities;
+global using System.Net;
+global using System.Text;

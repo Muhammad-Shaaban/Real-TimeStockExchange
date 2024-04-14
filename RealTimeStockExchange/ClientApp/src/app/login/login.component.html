@@ -1,0 +1,11 @@
+<form #loginForm="ngForm" autocomplete="off" (ngSubmit)="Login()">
+    <h2 class="text-muted mb-3">Login Form</h2><hr class="mb-5">
+    <div class="form-group mb-4">
+        <input type="email" class="form-control" name="Email" placeholder="Email" [(ngModel)]="LoginForm.email" #Email="ngModel" required/>
+    </div>
+    <div class="form-group mb-3">
+        <input type="password" class="form-control" name="Password" [(ngModel)]="LoginForm.password" #Password="ngModel" placeholder="Password" required/>
+    </div>
+
+    <button type="submit" class="btn btn-success text-capitalize" [disabled]="loginForm.invalid"><i class="fas fa-sign-in-alt"></i> Login</button>
+</form>

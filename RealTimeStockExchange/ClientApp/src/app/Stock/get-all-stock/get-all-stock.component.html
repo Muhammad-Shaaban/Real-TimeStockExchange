@@ -1,0 +1,74 @@
+<h2 class="text-center fw-bold">Stock Symbols Info</h2>
+<table class="table table-light mt-5">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Current Price</th>
+            <th scope="col">Time</th>
+            <th scope="col"  *ngIf="isAdmin">Symbol History</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stock of allStocks">
+            <td>{{ stock.id }}</td>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.currentPrice }}</td>
+            <td>{{ stock.time | date: 'dd-MM-yyyy , hh:mm:ss' }}</td>
+            <td  *ngIf="isAdmin">
+                <i class="fa-solid fa-circle-info text-primary" style="cursor: pointer;"
+                    (click)="SymbolHistory(stock.id!)"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="flex-auto">
+    <p-paginator (onPageChange)="onPageChange($event)" [rows]="5" [totalRecords]="StockCount!"
+        *ngIf="allStocks && StockCount > 0"></p-paginator>
+</div>
+
+<ng-container *ngIf="isAdmin">
+    <div class="flex justify-content-center">
+        <p-button (click)="showDialog()" label="Add New Symbol"></p-button>
+        <p-dialog header="New Symbol" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+            <form #symbolForm="ngForm" (ngSubmit)="AddNewSymbol()" class="p-1">
+                <div class="form-group mb-4">
+                    <input type="text" class="form-control" name="symbol" placeholder="Symbol" 
+                        [(ngModel)]="stockForm.symbol" #symbol="ngModel" required/>
+                </div>
+                <div class="form-group mb-4">
+                    <input type="text" class="form-control" name="currentPrice" placeholder="Current Price" 
+                        [(ngModel)]="stockForm.currentPrice" #currentPrice="ngModel" required/>
+                </div>
+
+                <button type="submit" class="btn btn-primary text-capitalize" [disabled]="symbolForm.invalid">Add</button>
+            </form>
+        </p-dialog>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="isAdmin">
+    <div class="flex justify-content-center">
+        <p-dialog header="Stock History" [(visible)]="stocklHistoryVisible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Order Id</th>
+                        <th scope="col">Order Type</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Created On</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of stockHistory.orders">
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.orderType === 1 ? 'Buy' : 'Sell' }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>{{ order.createdOn | date: 'dd-MM-yyyy , hh:mm:ss' }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </p-dialog>
+    </div>
+</ng-container>
